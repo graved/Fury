@@ -6,8 +6,18 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ C:\Projects\WoW\Bin\Interfac
 	<!-- Localization -->
 	<Script file="Localization.lua"/>
 
-	<!-- My Script -->
-	<Script file="Fury.lua"/>
+	<!-- Core Modules (Load Order is Important) -->
+	<Script file="Core.lua"/>
+	<Script file="Utils.lua"/>
+	<Script file="Config.lua"/>
+	<Script file="Talents.lua"/>
+	<Script file="SwingTimer.lua"/>
+	<Script file="EventHandlers.lua"/>
+	<Script file="Actions.lua"/>
+	<Script file="DecisionTree.lua"/>
+	<Script file="DecisionTree2.lua"/>
+	<Script file="DecisionTree3.lua"/>
+	<Script file="Commands.lua"/>
 
 	<!-- My AddOn Frames -->
 	<Frame name="FuryFrame" parent="UIParent">
@@ -18,6 +28,14 @@ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ C:\Projects\WoW\Bin\Interfac
 			<OnEvent>
 				Fury_OnEvent(event);
 			</OnEvent>
+			<OnUpdate>
+				if Fury and Fury.CheckAutoAttack then
+					Fury:CheckAutoAttack();
+				end
+				if Fury and Fury.SwingTimer and Fury.SwingTimer.OnUpdate then
+					Fury.SwingTimer:OnUpdate(arg1);
+				end
+			</OnUpdate>
 		</Scripts>
 	</Frame>
 </Ui>

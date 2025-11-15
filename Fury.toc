@@ -1,10 +1,9 @@
 ## Interface: 11200
 ## Title: Fury
-## Notes: To make Warrior combat easier.
-## Author: CubeNicke (Orig. Bhaerau)
-## eMail: cubenicke@gmail.com (Orig bhaerau@gmail.com)
+## Notes: Modular Warrior combat rotation with automatic spec detection and optimized rotations
+## Author: Graved89 (Orig. Bhaerau and CubeNicke)
 ## DefaultState: enabled
-## SavedVariables: Fury_Configuration, Fury_Runners, Fury_ImmuneDisarm
+## SavedVariablesPerCharacter: Fury_Configuration, Fury_Runners, Fury_ImmuneDisarm, Fury_DebugLog
 ## OptionalDeps: IsMounted, Outfitter
 IsMounted\IsMounted.xml
 Fury.xml
